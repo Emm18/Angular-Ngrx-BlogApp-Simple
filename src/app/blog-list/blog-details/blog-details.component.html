@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row" *ngIf="blog">
+    <h4>
+      {{ blog.title }}
+    </h4>
+    <p>
+      {{ blog.content }}
+    </p>
+    <a class="btn blue" (click)="back()">Back</a>
+    <a class="btn" (click)="editBlog()">Edit</a>
+    <a class="btn red" (click)="deleteBlog()">Delete</a>
+  </div>
+
+  <div class="row" *ngIf="!blog">
+    <p>NO BLOG FOUND!</p>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="blogform">
+      <div class="col s12">
+        <label for="title"><h4>Title</h4></label>
+        <input type="text" id="title" formControlName="title" />
+        <span
+          style="color: red; font-size: 12px"
+          *ngIf="!blogform.get('title').valid && showInvalids"
+          >Title is required</span
+        >
+      </div>
+
+      <div class="col s12">
+        <label for="content"><h4>Content</h4></label>
+        <textarea
+          type="text"
+          id="content"
+          formControlName="content"
+          class="materialize-textarea"
+        ></textarea>
+        <span
+          style="color: red; font-size: 12px"
+          *ngIf="!blogform.get('content').valid && showInvalids"
+          >Content is required</span
+        >
+      </div>
+
+      <div class="col s12">
+        <a class="btn" (click)="onSubmit()">{{
+          !editMode ? "Save" : "Update"
+        }}</a>
+        |
+        <a class="btn red" (click)="onCancel()">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

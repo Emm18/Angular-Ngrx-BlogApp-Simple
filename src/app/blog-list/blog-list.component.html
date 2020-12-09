@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row" *ngFor="let blog of blogs; let i = index">
+    <a (click)="viewBlogDetails(i)" style="cursor: pointer">
+      <div class="col">
+        <h3>{{ blog.title | uppercase }}</h3>
+      </div>
+    </a>
+  </div>
+  <a class="btn" routerLink="../createBlog">Create Blog</a>
+</div>
